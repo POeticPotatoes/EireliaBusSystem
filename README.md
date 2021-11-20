@@ -25,8 +25,6 @@ Config file: Written in YAML with standard notation
 * Spigot 1.16.4 API (hub.spigotmc.org)  
   - Server must be running on Spigot or a version based on Spigot (eg.paper)  
 * VaultAPI 1.7 (github.com.MilkBowl/VaultAPI)      
-  - Server must be running on Spigot or a version based on Spigot (eg.paper)  
-* VaultAPI 1.7 (github.com.MilkBowl/VaultAPI)      
   - Solely for economy API (to handle bus prices and charging)    
   - Server MUST include Vault and a vault-compatible economy plugin  
 
