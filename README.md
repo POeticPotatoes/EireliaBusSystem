@@ -2,27 +2,29 @@
 A Minecraft plugin that provides a bus service for the Eirelia Minecraft server. Bus stops are defined by signs and will be deleted if the sign is broken.
 
 ## Table of Contents 
-* [Introduction](#Introduction)
-* [Technologies](#Technologies)
-* [Permissions](#Permissions)
-* [Sign Format](#Sign_Format)
-* [Config File](#Config_File)
-* [Commands](#Commands)
+* [Introduction](#introduction)
+* [Technologies](#technologies)
+* [Permissions](#permissions)
+* [Sign Format](#sign-format)
+* [Config File](#config-file)
+* [Commands](#commands)
 
 ## Introduction
 This plugin transports players between designated bus stops and charges them based on distance travelled. Bus stops are defined by the placement of signs which provide a stop name and a bus line; only stops within the same line are visible to each other.
 
 Written by POeticPotatoes, who is learning and practicing Object-Oriented Programming.
 
-**Technologies**
-Java Version: JavaSE-1.8
-Written in the Eclipse IDE
-Managed with Apache Maven
+## Technologies
+Java Version: JavaSE-1.8  
+Written in the Eclipse IDE  
+Managed with Apache Maven  
 
-Config file: Written in YAML with standard notation
+Config file: Written in YAML with standard notation  
 
-### Dependencies:
+**Dependencies:**
 * Spigot 1.16.4 API (hub.spigotmc.org)  
+  - Server must be running on Spigot or a version based on Spigot (eg.paper)  
+* VaultAPI 1.7 (github.com.MilkBowl/VaultAPI)      
   - Server must be running on Spigot or a version based on Spigot (eg.paper)  
 * VaultAPI 1.7 (github.com.MilkBowl/VaultAPI)      
   - Solely for economy API (to handle bus prices and charging)    
