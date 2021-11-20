@@ -1,0 +1,10 @@
+economy_multiplier: 0.01
+
+travel_settings:
+  delay: 2
+  blindness: true
+  text:
+    - 'Welcome to the Eirelia City bus service!'
+    - 'We''re going to @stop today, are we?'
+    - 'The @line line really do be janky these days.'
+    - 'Thank you for your patronage!'

@@ -1,0 +1,23 @@
+main: com.eirelia.bus.BusSystem
+name: EireliaBusSystem
+version: '1.0'
+api-version: 1.16
+author: poeticpotatoes
+description: Bus system for the eirelia network
+commands:
+  setbusmultiplier:
+    aliases: multiplier
+    permissions: eirelia.bus.edit
+    description: sets the economy multiplier for buses based on distance
+  cancelbus:
+    aliases: cancel
+    permissions: eirelia.bus.edit
+    description: cancels a player's bus ride if they are on one
+  reloadbusconfig:
+    aliases: busconfig
+    permissions: eirelia.bus.admin
+    description: reloads all config files.
+  createbus:
+    aliases: newbus
+    permissions: eirelia.bus.edit
+    description: creates a new bus stop.
