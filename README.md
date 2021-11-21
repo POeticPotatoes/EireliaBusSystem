@@ -63,14 +63,15 @@ In order to register a sign as a bus stop, a player should look at the sign and 
 ## Config File
 * **economy_multiplier** - float value that determines how expensive bus stops will be. The price to travel to another stop is given by:  
             
-	    `distance_in_blocks * economy_multiplier`
+	    distance_in_blocks * economy_multiplier
    Its default value is 0.01
 
 * **travel_settings** - settings for what happens during the bus travel.  
     * **delay** - the delay(in seconds) between display text. Only accepts integers, default value of 2.
     * **blindness** - determines whether to apply blindness after the teleport. Default value of `true`.  
     * **text** - a list of text to be shown to the player during travel. This means that travel time can be calculated by:  
-            `delay * (no_of_lines - 1)`
+    
+            delay * (no_of_lines - 1)  
 
 
 ## Commands
