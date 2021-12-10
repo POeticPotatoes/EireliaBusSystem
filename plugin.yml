@@ -16,8 +16,12 @@ commands:
   reloadbusconfig:
     aliases: busconfig
     permissions: eirelia.bus.admin
-    description: reloads all config files.
+    description: reloads all config files
   createbus:
     aliases: newbus
     permissions: eirelia.bus.edit
-    description: creates a new bus stop.
+    description: creates a new bus stop
+  deletebus:
+    aliases: delbus
+    permissions: eirelia.bus.edit
+    description: deletes a bus stop

@@ -8,5 +8,6 @@ public class CommandHandler {
 		new CancelBus(main);
 		new LoadConfig(main);
 		new CreateBus(main);
+		new DeleteBus(main);
 	}
 }

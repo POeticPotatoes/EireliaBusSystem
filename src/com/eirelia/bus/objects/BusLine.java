@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
+import org.bukkit.command.CommandSender;
 
 import com.eirelia.bus.BusSystem;
 
@@ -31,13 +31,17 @@ public class BusLine {
 		reloadGUI();
 	}
 	
-	public void deregisterStop(Block b, Player p) {
+	public void deregisterStop(Block b, CommandSender p) {
 		p.sendMessage(ChatColor.GOLD + "Bus stop " + stops.get(b).getName() + " will be removed from line " + name);
 		stops.remove(b);
 		reloadGUI();
 		if (!stops.isEmpty()) return;
 		p.sendMessage(ChatColor.GOLD + "Line " + name + ChatColor.GOLD + " is empty! It will be deleted.");
 		BusSystem.getLineHandler().deregisterLine(this);
+	}
+	
+	public void deregisterStop(BusStop s, CommandSender p) {
+		deregisterStop(getBlock(s), p);
 	}
 	
 	public String getName() {
@@ -55,6 +59,13 @@ public class BusLine {
 	public BusStop getStop(String name) {
 		for (Block b: stops.keySet()) {
 			if (stops.get(b).getName().equals(name)) return stops.get(b);
+		}
+		return null;
+	}
+	
+	public Block getBlock(BusStop stop) {
+		for (Block b: stops.keySet()) {
+			if (stops.get(b).equals(stop)) return b;
 		}
 		return null;
 	}

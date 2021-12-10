@@ -24,10 +24,19 @@ public class LineHandler {
 		return null;
 	}
 	
+	public List<BusStop> getStop(String s) {
+		List<BusStop> ans = new ArrayList<BusStop>();
+		for (BusLine l: lines) {
+			BusStop stop = l.getStop(s);
+			if (stop == null) continue;
+			ans.add(stop);
+		}
+		return ans;
+	}
+	
 	public BusLine getLine(String name) {
 		Optional<BusLine> line = lines.stream().filter(l -> l.getName().equals(name)).findFirst();
-		if (line.isPresent()) return line.get();
-		return null;
+		return line.isPresent()? line.get(): null;
 	}
 	
 	public List<BusLine> getLines() {
