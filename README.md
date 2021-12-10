@@ -88,9 +88,9 @@ To delete the bus stop, a player can break the sign and it will automatically be
 	* Creates a new bus stop if the player is looking at a sign. Player will be asked to specify where they want players to spawn, and also where they want the player to face upon spawning.  
 	* Sign must be a valid bus stop (name and line must be specified.).
 
-**/deletebus**
-   Aka. /delbus
-   Permission: *eirelia.bus.edit*
+**/deletebus**  
+   Aka. /delbus  
+   Permission: *eirelia.bus.edit*  
         * Deletes an existing bus stop by name.
 	* In the case that multiple bus stops with the same name exist in different lines, the stops will be listed as clickable options for the player to specify which stop they are referring to.
 
