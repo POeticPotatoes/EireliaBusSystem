@@ -9,5 +9,7 @@ public class CommandHandler {
 		new LoadConfig(main);
 		new CreateBus(main);
 		new DeleteBus(main);
+		new ToBus(main);
+		new StopSuggestor(main);
 	}
 }

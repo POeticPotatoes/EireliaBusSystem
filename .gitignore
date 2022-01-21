@@ -3,3 +3,4 @@
 *.prefs
 .classpath
 /target/
+.idea/*

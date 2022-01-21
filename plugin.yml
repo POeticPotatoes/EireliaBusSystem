@@ -25,3 +25,7 @@ commands:
     aliases: delbus
     permissions: eirelia.bus.edit
     description: deletes a bus stop
+  tobus:
+    aliases: tb
+    permissions: eirelia.bus.edit
+    description: teleports the player to a bus stop

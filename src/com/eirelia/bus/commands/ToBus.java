@@ -5,6 +5,7 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 import com.eirelia.bus.BusSystem;
 import com.eirelia.bus.objects.BusStop;
@@ -14,25 +15,32 @@ import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 
-
-public class DeleteBus implements CommandExecutor {
-	private final LineHandler lineHandler;
+public class ToBus implements CommandExecutor {
 	
-	public DeleteBus(BusSystem main) {
-		main.getCommand("deletebus").setExecutor(this);
-		lineHandler = BusSystem.getLineHandler();
+	private final LineHandler lineHandler = BusSystem.getLineHandler();
+	
+	public ToBus(BusSystem main) {
+		
+		main.getCommand("tobus").setExecutor(this);
 	}
 	
 	@Override
 	public boolean onCommand(CommandSender s, Command command, String label, String[] args) {
+		if (!(s instanceof Player)) {
+			s.sendMessage(ChatColor.RED + "You must be a player to do that!");
+			return false;
+		}
 		if (!s.hasPermission("eirelia.bus.edit")) {
 			s.sendMessage(ChatColor.RED + "You do not have permission to do that!");
 			return false;
 		}
 		if (args.length == 0) {
-			s.sendMessage("Invalid syntax. /deletebus [stop]");
+			s.sendMessage("Invalid syntax. /tobus [stop]");
 			return true;
 		}
+		
+		Player p = (Player) s;
+		
 		int index = -1;
 		StringBuilder buildArg = new StringBuilder(args[0]);
 		
@@ -58,12 +66,12 @@ public class DeleteBus implements CommandExecutor {
 		}
 		if (stops.size() == 1) {
 			BusStop stop = stops.get(0);
-			stop.getLine().deregisterStop(stop, s);
+			p.teleport(stop.getSpawn());
 			return true;
 		}
 		
 		if (index < 0 || index >= stops.size()) {
-			s.sendMessage(ChatColor.GOLD + "Select which Bus Stop you wish to delete.");
+			s.sendMessage(ChatColor.GOLD + "Select which Bus Stop you wish to teleport to.");
 			for (int i = 0; i<stops.size(); i++) {
 				BusStop stop = stops.get(i);
 				s.spigot().sendMessage(option(i, stop.getName(), stop.getLine().getName()));
@@ -73,7 +81,7 @@ public class DeleteBus implements CommandExecutor {
 		
 		//in case second argument isn't an int
 		BusStop stop = stops.get(index);
-		stop.getLine().deregisterStop(stop, s);
+		p.teleport(stop.getSpawn());
 		return true;
 	}
 	
@@ -81,7 +89,7 @@ public class DeleteBus implements CommandExecutor {
 		TextComponent ans = new TextComponent("[" + (num+1) + "] " + name + " from line " + line);
 		ans.setColor(ChatColor.GOLD);
 		ans.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND,
-				"/eireliabussystem:deletebus " + name + " " +  "mvnw" + num));
+				"/eireliabussystem:tobus " + name + " " +  "mvnw" + num));
 		return ans;
 		
 	}

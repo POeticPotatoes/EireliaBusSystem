@@ -43,6 +43,25 @@ public class LineHandler {
 		return lines;
 	}
 	
+	public List<String> getAllStops() {
+		
+		List<String> ans = new ArrayList<>();
+		
+		for (BusLine line: lines) {
+			
+			List<BusStop> stops = line.getStops();
+			
+			for (BusStop stop: stops) {
+				
+				String name = stop.getName();
+				if (!ans.contains(name)) ans.add(name);
+			}
+			
+		}
+		
+		return ans;
+	}
+	
 	public void save() {
 		lines.stream().forEach(l -> l.save());
 	}
