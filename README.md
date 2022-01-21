@@ -60,6 +60,8 @@ Bus line
 
 In order to register a sign as a bus stop, a player should look at the sign and use the /createbus command. They will then be asked to left click a block for incoming players to be teleported to, and select a direction for the players to be facing when they are teleported.
 
+To delete the bus stop, a player can break the sign and it will automatically be deleted. Stops can also be deleted by using the /deletebus command.
+
 ## Config File
 * **economy_multiplier** - float value that determines how expensive bus stops will be. The price to travel to another stop is given by:  
             
@@ -84,7 +86,13 @@ In order to register a sign as a bus stop, a player should look at the sign and 
    Aka. /newbus  
    Permission: *eirelia.bus.edit*  
 	* Creates a new bus stop if the player is looking at a sign. Player will be asked to specify where they want players to spawn, and also where they want the player to face upon spawning.  
-	Sign must be a valid bus stop (name and line must be specified.).
+	* Sign must be a valid bus stop (name and line must be specified.).
+
+**/deletebus**  
+   Aka. /delbus  
+   Permission: *eirelia.bus.edit*  
+        * Deletes an existing bus stop by name.
+	* In the case that multiple bus stops with the same name exist in different lines, the stops will be listed as clickable options for the player to specify which stop they are referring to.
 
 **/setbusmultiplier**  
    Aka. /multiplier  
@@ -94,5 +102,5 @@ In order to register a sign as a bus stop, a player should look at the sign and 
 **/reloadbusconfig**  
    Permission: *eirelia.bus.admin*  
 	* Updates the plugin based on any changes to the config file while the server is running.  
-	Does not require a restart for changes to take effect (despite the command warning).
+	* Does not require a restart for changes to take effect (despite the command warning).
 
