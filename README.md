@@ -33,13 +33,12 @@ Players will be limited to certain uses of the plugin based on the permissions t
 
 In order of administrative power:
 * **eirelia.bus.use**
-  Grants the player permission to use bus stops to teleport, along with the */cancelbus* command to cancel any existing bus rides.
+  -- Grants the player permission to use bus stops to teleport, along with the */cancelbus* command to cancel any existing bus rides.
 * **eirelia.bus.edit**
-  Grants the player permission to create new bus stops and delete existing ones.
-  Also grants access to the */setbusmultiplier* command.
+  -- Grants the player permission to create new bus stops and delete existing ones. They will be able to teleport to existing bus stops with commands. Also grants access to the */setbusmultiplier* command.  
   Automatically grants the permission of **use**.
 * **eirelia.bus.admin**
-  Grants the player permission to use the */reloadbusconfig* command.
+  -- Grants the player permission to use the */reloadbusconfig* command.  
   Automatically grants the permissions of **use** and **edit**.
 
 ## Sign Format
@@ -91,8 +90,14 @@ To delete the bus stop, a player can break the sign and it will automatically be
 **/deletebus**  
    Aka. /delbus  
    Permission: *eirelia.bus.edit*  
-        * Deletes an existing bus stop by name.
+        * Deletes an existing bus stop by name.  
 	* In the case that multiple bus stops with the same name exist in different lines, the stops will be listed as clickable options for the player to specify which stop they are referring to.
+
+**/tobus**  
+  Aka. /tobus  
+  Permission: *eirelia.bus.edit*  
+    * Teleports the player to an existing bus stop by name.  
+    * In the case that multiple bus stops with the same name exist in different lines, the stops will be listed as clickable options for the player to specify which stop they are referring to.
 
 **/setbusmultiplier**  
    Aka. /multiplier  
